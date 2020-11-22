@@ -1,7 +1,7 @@
 # Проект «Киноман» [![Build status][travis-image]][travis-url]
 
 * Студент: [Stephanie Bobyr](https://up.htmlacademy.ru/ecmascript/13/user/1323345).
-* Наставник: `Неизвестно`.
+* Наставник: [Николай ٩(｡•́‿•̀｡)۶🎸 Думчев](https://htmlacademy.ru/profile/nikopol_fw).
 
 ---
 
