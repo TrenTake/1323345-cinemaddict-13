@@ -1,9 +1,9 @@
-import {createProfileTemplate} from `/view/profile.js`;
-import {createMainNavigationTemplate} from '/view/navigation.js';
-import {createSortTemplate} from '/view/sort.js';
-import {createFilmDetailsTemplate} from '/view/details.js';
-import {createShowMoreButtonTemplate} from '/view/show-button.js';
-import {createFilmCardTemplate} from '/view/card.js';
+import {createProfileTemplate} from 'view/profile';
+import {createMainNavigationTemplate} from 'view/navigation';
+import {createSortTemplate} from 'view/sort';
+import {createFilmDetailsTemplate} from 'view/details';
+import {createShowMoreButtonTemplate} from 'view/show-button';
+import {createFilmCardTemplate} from 'view/card';
 
 
 const CARDS_COUNT = 5;
