@@ -6,7 +6,7 @@ import {createShowMoreButtonTemplate} from './view/show-button';
 import {createFilmCardTemplate} from './view/card';
 import {createFilmContainerTemplate} from './view/container';
 import {createStatisticsTemplate} from './view/statistics';
-import {generateFilmCards} from './mock/movie-card';
+import {generateFilmCards, getRandomMovie} from './mock/movie-card';
 
 const CARDS_COUNT = 5;
 const EXTRA_CARDS_COUNT = 2;
@@ -28,17 +28,17 @@ const filmsExtraListElements = document.querySelectorAll(`.films-list--extra`);
 const filmContainerElement = document.querySelector(`.films-list`);
 const cardWrapperElement = filmContainerElement.querySelector(`.films-list__container`);
 for (let i = 1; i <= CARDS_COUNT; i++) {
-  render(cardWrapperElement, createFilmCardTemplate(), `beforeend`);
+  render(cardWrapperElement, createFilmCardTemplate(getRandomMovie(films)), `beforeend`);
 }
 
 const topRatedContainerElement = filmsExtraListElements[0].querySelector(`.films-list__container`);
 for (let i = 1; i <= EXTRA_CARDS_COUNT; i++) {
-  render(topRatedContainerElement, createFilmCardTemplate(), `beforeend`);
+  render(topRatedContainerElement, createFilmCardTemplate(getRandomMovie(films)), `beforeend`);
 }
 
 const mostCommentedContrainerElement = filmsExtraListElements[1].querySelector(`.films-list__container`);
 for (let i = 1; i <= EXTRA_CARDS_COUNT; i++) {
-  render(mostCommentedContrainerElement, createFilmCardTemplate(), `beforeend`);
+  render(mostCommentedContrainerElement, createFilmCardTemplate(getRandomMovie(films)), `beforeend`);
 }
 
 render(filmContainerElement, createShowMoreButtonTemplate(), `beforeend`);

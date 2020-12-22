@@ -59,23 +59,24 @@ const comments = [{
  */
 
 const getRandomInt = (min, max) => {
-  return Math.random() * (max - min) + min;
+  return Math.floor(Math.random() * (max - min) + min);
 };
 
-const getNewArray = (ar) => {
-  const array = [];
-  const newLength = ar.length - 4;
-  const j = getRandomInt(0, newLength);
-  for (let i = j; i <= j + getRandomInt(0, 5); i++) {
-    array.push(ar[i]);
-  }
-  return array;
+const getNewArray = (array) => {
+  // const array = [];
+  // const newLength = ar.length - 4;
+  // const j = getRandomInt(0, newLength);
+  // for (let i = j; i <= j + getRandomInt(0, 5); i++) {
+  //   array.push(ar[i]);
+  // }
+  // return array;
+  return array.map((item, index) => index > getRandomInt(0, array.length - 1) ? null : item);
 };
 
 const generateFilmCard = () => {
   return {
     title: titles[getRandomInt(0, titles.length - 1)],
-    age: ages[getRandomInt(0, ages.length - 1)],
+    ageRating: ages[getRandomInt(0, ages.length - 1)],
     director: directors[getRandomInt(0, directors.length - 1)],
     writers: getNewArray(writers).join(`, `).toString(),
     actors: getNewArray(actors).join(`, `).toString(),
@@ -97,5 +98,8 @@ const generateFilmCards = (count) => {
   return Array.from({length: count}, generateFilmCard);
 };
 
-export {generateFilmCard, generateFilmCards};
-// export {titles, posters, genres, descriptions, directors, writers, actors, countries, MAX_DESCRIPTION_LENGTH, ages, comments, durations};
+const getRandomMovie = (array) => {
+  return array[getRandomInt(0, array.length - 1)];
+};
+
+export {generateFilmCards, getRandomMovie};
