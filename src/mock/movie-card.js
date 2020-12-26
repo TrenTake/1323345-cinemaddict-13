@@ -62,15 +62,14 @@ const getRandomInt = (min, max) => {
   return Math.floor(Math.random() * (max - min) + min);
 };
 
-const getNewArray = (array) => {
-  // const array = [];
-  // const newLength = ar.length - 4;
-  // const j = getRandomInt(0, newLength);
-  // for (let i = j; i <= j + getRandomInt(0, 5); i++) {
-  //   array.push(ar[i]);
-  // }
-  // return array;
-  return array.map((item, index) => index > getRandomInt(0, array.length - 1) ? null : item);
+const getNewArray = (ar) => {
+  const array = [];
+  const newLength = ar.length - 4;
+  const j = getRandomInt(0, newLength);
+  for (let i = j; i <= j + getRandomInt(0, 5); i++) {
+    array.push(ar[i]);
+  }
+  return array;
 };
 
 const generateFilmCard = () => {
@@ -82,7 +81,7 @@ const generateFilmCard = () => {
     actors: getNewArray(actors).join(`, `).toString(),
     rating: getRandomInt(1, 10),
     // date: ,
-    genreNames: getNewArray(genres),
+    genreNames: getNewArray(genres)[0],
     poster: posters[getRandomInt(0, posters.length - 1)],
     description: getNewArray(descriptions).join(` `).toString(),
     country: countries[getRandomInt(0, countries.length - 1)],
